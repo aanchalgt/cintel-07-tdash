@@ -50,21 +50,21 @@ with ui.sidebar(title="Filter controls"):
 
 with ui.layout_column_wrap(fill=False):
     with ui.value_box(showcase=icon_svg("earlybirds")):
-        "Number of penguins"
+        "No. of penguins"
 
         @render.text
         def count():
             return filtered_df().shape[0]
 
     with ui.value_box(showcase=icon_svg("ruler-horizontal")):
-        "Average bill length"
+        "Avg. bill length"
 
         @render.text
         def bill_length():
             return f"{filtered_df()['bill_length_mm'].mean():.1f} mm"
 
     with ui.value_box(showcase=icon_svg("ruler-vertical")):
-        "Average bill depth"
+        "Avg. bill depth"
 
         @render.text
         def bill_depth():
@@ -73,7 +73,7 @@ with ui.layout_column_wrap(fill=False):
 
 with ui.layout_columns():
     with ui.card(full_screen=True):
-        ui.card_header("Bill length and depth")
+        ui.card_header("Bill length & depth")
 
         @render.plot
         def length_depth():
